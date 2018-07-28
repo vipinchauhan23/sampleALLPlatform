@@ -6,7 +6,7 @@
 
 import React from 'react';
 import RX from 'reactxp';
-
+import Analytics from 'mobile-center-analytics';
 export default class App extends RX.Component  {
   constructor(){
     super();
@@ -14,6 +14,9 @@ export default class App extends RX.Component  {
       jokes:''
     }
 
+  }
+  trackEvent = (eventName, data='') => {
+    Analytics.trackEvent(eventName,{jake:data})
   }
 getJokes = () => {
   fetch('https://icanhazdadjoke.com/',{headers:{Accept:'text/plain'}}).then(res => res.text())
