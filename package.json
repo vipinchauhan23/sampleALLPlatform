@@ -7,6 +7,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "appcenter": "^1.7.1",
+    "appcenter-analytics": "^1.7.1",
+    "appcenter-crashes": "^1.7.1",
     "react": "16.0.0",
     "react-addons-perf": "^15.4.2",
     "react-addons-test-utils": "^15.6.2",
@@ -26,6 +29,11 @@
     "rnpm-plugin-windows": "^0.2.8"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "setupFiles": [
+      "<rootDir>\\node_modules\\appcenter\\test\\AppCenterMock.js",
+      "<rootDir>\\node_modules\\appcenter-analytics\\test\\AppCenterAnalyticsMock.js",
+      "<rootDir>\\node_modules\\appcenter-crashes\\test\\AppCenterCrashesMock.js"
+    ]
   }
 }
